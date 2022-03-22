@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{   
+	printf("请输入一个句子:\n");
+	char s[1000];
+	gets(s);
+	printf("请输入一个单词:\n");
+	char w[10];
+	gets(w);
+	strlwr(s);
+	strlwr(w);
+
+	int sn=strlen(s);
+	int	wn=strlen(w);
+	int count=0;
+
+	for(int i=0;i<=sn-wn;i++)
+	{
+		char t[wn+1];
+		t[wn]='\0';
+		for(int j=0;j<wn;j++)	
+		{
+           t[j]=s[i+j];		
+		   if(strcmp(t,w)==0)
+		   {
+			   count++;
+		   }
+		}
+		
+	}
+	 printf("%d",count);
+}
+
+
